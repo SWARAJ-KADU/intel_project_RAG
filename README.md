@@ -13,3 +13,4 @@ python -m pip install openvino
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 pip install -r requirements.txt
+streamlit run app.py
