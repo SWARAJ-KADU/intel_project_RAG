@@ -1,10 +1,11 @@
 from langchain_community.document_compressors.openvino_rerank import OpenVINOReranker
 from langchain.retrievers import ContextualCompressionRetriever
 
-
+core = ov.Core()
+devices = core.available_devices
 def reranker_(retriever):
     rerank_model_name = "BAAI/bge-reranker-base"
-    rerank_model_kwargs = {"device": "CPU"}
+    rerank_model_kwargs = {"device": devices[1]}
     rerank_top_n = 2
 
     reranker = OpenVINOReranker(
